@@ -6,10 +6,9 @@ Feature: product_search
     @test_case 
 	Scenario: Verify simple product search
         Given I navigate to homepage
-        When I click search textbox
-        And I type 'Summer Dress'
+        When I search 'Summer Dress'
         And I click the first product
-        Then I see a 'Summer Dress'
+        Then I see a product with name like 'Summer Dress'
 
     @ignore 
 	Scenario: Verify product serarch with filters
