@@ -27,8 +27,18 @@ end
 
 Then(/^I see a '(.*)'$/) do |product_name| 
 	begin
-		#Implement product_name check
+		@page.is_present?(product_name)
 	rescue => e
 		fail "Error iserting dates. Error: #{e}"
+	end
+end
+
+When(/^I LogIn$/) do
+	begin
+		@page.clickSignIn
+		@page = LogInPage.new $browser
+		@page.logIn
+	rescue => e
+		fail "Error opening page. Error : #{e}"
 	end
 end

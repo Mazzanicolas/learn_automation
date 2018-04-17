@@ -5,7 +5,7 @@ class HomePage
     SEARCH_BUTTON      = { css: '#searchbox button' }
     
     #Accounts
-    SIGNIN_BUTTON      = { css: '' }
+    SIGNIN_BUTTON      = { css: '.login' }
     #NavBar
     NAV_WOMEN_BUTTON   = { css: '' }
     NAV_DRESSES_BUTTON = { xpath: '//ul[@class="submenu-container clearfix first-in-line-xs"] //a[@title = "Dresses"]' }
@@ -27,6 +27,9 @@ class HomePage
         browser.find_element(SEARCH_BUTTON).click
     end    
 
+    def goToDresses()
+        browser.find_element(NAV_DRESSES_BUTTON)
+    end
     def loaded?
         browser.title.include?('My Store')#Esto se tiene que cambiar, no puede quedar asi.
     end
@@ -39,18 +42,21 @@ class HomePage
         browser.find_element(CLICK_FIRST_ITEM).click
     end
 
-    def search_result_present?(search_result)
+    def is_present?(search_result)
         browser.find_element(SELECTED_ITEM_TITLE).text.include? search_result
     end
+
+    def clickSignIn()
+        browser.find_element(SIGNIN_BUTTON).click
 
     def wait_for(seconds=5)
          Selenium::WebDriver::Wait.new(:timeout => seconds).until { yield }
     end
-
     def displayed?(locator)
         browser.find_element(locator).displayed?
         true
         rescue Selenium::WebDriver::Error::NoSuchElementError
             false
+        end
     end
 end

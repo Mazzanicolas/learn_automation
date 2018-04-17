@@ -26,7 +26,7 @@ end
 
 Then(/^I see a product with name like '(.*)'$/) do |product_name|
 	begin
-		@page.search_result_present?(product_name)
+		@page.is_present?(product_name)
 	rescue => e
 		fail "Error in results. Error: #{e}"
 	end
