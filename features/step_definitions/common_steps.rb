@@ -33,7 +33,7 @@ Then(/^I see a '(.*)'$/) do |product_name|
 	end
 end
 
-When(/^I LogIn$/) do
+When(/^I LogIn$/) do #Es uno solo?
 	begin
 		@page.clickSignIn
 		@page = LogInPage.new $browser

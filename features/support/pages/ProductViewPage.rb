@@ -1,9 +1,9 @@
 class ProductViewPage
     #Agrupar en alguna lista o mapa
     #Search
-    ADD_CART_BUTTON      = { css: '#add_to_cart button' }
-    CONTINUE_SHOPPING_BUTTON =  { css: '.continue span' }
-    CART_BUTTON      = { css: 'a[title ="View my shopping cart"]' }
+    ADD_CART_BUTTON          = { css: '#add_to_cart button'               }
+    CONTINUE_SHOPPING_BUTTON = { css: '.continue span'                    }
+    CART_BUTTON              = { css: 'a[title ="View my shopping cart"]' }
     attr_reader :browser
 
     def initialize(browser)

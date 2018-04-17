@@ -16,7 +16,7 @@ When(/^I search '(.*)'$/) do |product_name|
 	end
 end
 
-When(/^I click the first product$/) do 
+When(/^I select the first product$/) do 
 	begin
 	@page.clickFirstProduct()
 	rescue => e
