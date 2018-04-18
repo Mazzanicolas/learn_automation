@@ -20,7 +20,7 @@ When(/^I Add the item to the cart$/) do
 	begin
 		@page.clickOnAddCart()
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error adding to cart. Error: #{e}"
 	end
 end
 
@@ -52,13 +52,12 @@ When(/^I proceed to checkout to '(.*)'$/) do |checkOutStep|
 		when "Payment"
 			@page = PaymentCheckOut.new $browser
 		end
-        #Use with parameters to click element
 	rescue => e
 		fail "Error iserting dates. Error: #{e}"
 	end
 end
 
-When(/^I agree to the terms$/) do #|element|
+When(/^I agree to the terms$/) do
 	begin
         @page.agreeTerms()
 	rescue => e
@@ -66,7 +65,7 @@ When(/^I agree to the terms$/) do #|element|
 	end
 end
 
-When(/^I select Bank Wire payment$/) do #|element|
+When(/^I select Bank Wire payment$/) do
 	begin
         @page.select_bankwire()
 	rescue => e
@@ -74,7 +73,7 @@ When(/^I select Bank Wire payment$/) do #|element|
 	end
 end
 
-When(/^I confirm my order$/) do #|element|
+When(/^I confirm my order$/) do 
 	begin
         	@page.confirm_payment()
 	rescue => e
@@ -82,7 +81,7 @@ When(/^I confirm my order$/) do #|element|
 	end
 end
 
-Then(/^My order is complete$/) do #|element|
+Then(/^My order is complete$/) do 
 	begin
         	@page.is_order_complete?()
 	rescue => e
