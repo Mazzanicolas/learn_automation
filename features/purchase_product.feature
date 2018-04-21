@@ -18,7 +18,6 @@ Feature: product_purchase
         And   I confirm my order
         Then  My order is complete
 
-    @Done11Steps
     @ignore
 	Scenario: Purchase dress
         Given I navigate to homepage

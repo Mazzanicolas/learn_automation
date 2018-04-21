@@ -3,7 +3,6 @@ Feature: product_search
     Background:
         Given a new 'chrome' browser
     
-    @Done3Steps
     @ignore
 	Scenario: Verify simple product search
         Given I navigate to homepage
