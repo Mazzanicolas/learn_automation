@@ -4,8 +4,8 @@ class LogInPage
     PASSWORD       = { id: 'passwd'     }
     SIGN_IN_BUTTON = { id: 'SubmitLogin'}
 
-    CREATE_ACCOUNT_BUTTON    = {  }
-    EMAIL_REGISTRATION_INPUT = {  }
+    CREATE_ACCOUNT_BUTTON    = { css: '#SubmitCreate' }
+    EMAIL_REGISTRATION_INPUT = { css: '#email_create' }
 
     attr_reader :browser
 
@@ -24,8 +24,8 @@ class LogInPage
     end
 
     def typeEmailToRegister(email)
-        browser.find_element(EMAIL_REGISTRATION).clear
-        browser.find_element(EMAIL).send_keys(email)
+        browser.find_element(EMAIL_REGISTRATION_INPUT).clear
+        browser.find_element(EMAIL_REGISTRATION_INPUT).send_keys(email)
     end
 
     def clickCreateAccount()

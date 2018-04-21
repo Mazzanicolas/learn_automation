@@ -1,17 +1,19 @@
-class LogInPage
+class AccountCreation
     #Agrupar en alguna lista o mapa
-    FIRST_NAME_INPUT   = {  }
-    LAST_NAME_INPUT    = {  }
-    EMAIL_INPUT        = {  }
-    PASSWORD_INPUT     = {  }
-    ADDRESS_INPUT      = {  }
-    CITY_INPUT         = {  }
-    STATE_INPUT        = {  }
-    POSTAL_CODE_INPUT  = {  }
-    COUNTRY_INPUT      = {  }
-    MOBILE_PHONE_INPUT = {  }
-    REGISTER_BUTTON    = {  }
-
+    FIRST_NAME_INPUT   = { css: '#customer_firstname' }
+    LAST_NAME_INPUT    = { css: '#customer_lastname'  }
+    FIRST_NAME_INPUT_  = { css: '#firstname' }
+    LAST_NAME_INPUT_   = { css: '#lastname'  }
+    EMAIL_INPUT        = { css: '#email' }
+    PASSWORD_INPUT     = { css: '#passwd' }
+    ADDRESS_INPUT      = { css: '#address1' }
+    CITY_INPUT         = { css: '#city' }
+    STATE_INPUT        = { css: '#id_state > option:nth-child(8)' }
+    POSTAL_CODE_INPUT  = { css: '#postcode' }
+    COUNTRY_INPUT      = { css: '#id_country > option:nth-child(2)' }
+    MOBILE_PHONE_INPUT = { css: '#phone_mobile' }
+    REGISTER_BUTTON    = { css: '#submitAccount' }
+    SUCCESFUL_REGISTRATION = { css: '#center_column > p'}
     attr_reader :browser
 
     def initialize(browser)
@@ -19,13 +21,18 @@ class LogInPage
     end
     
     def typeFirstName(first_name)
+        sleep 5
         browser.find_element(FIRST_NAME_INPUT).clear
         browser.find_element(FIRST_NAME_INPUT).send_keys(first_name)
+        browser.find_element(FIRST_NAME_INPUT_).clear
+        browser.find_element(FIRST_NAME_INPUT_).send_keys(first_name)
     end
 
     def typeLastName(last_name)
         browser.find_element(LAST_NAME_INPUT).clear
         browser.find_element(LAST_NAME_INPUT).send_keys(last_name)
+        browser.find_element(LAST_NAME_INPUT_).clear
+        browser.find_element(LAST_NAME_INPUT_).send_keys(last_name)
     end
 
     def typeEmail(email)
@@ -48,7 +55,8 @@ class LogInPage
         browser.find_element(CITY_INPUT).send_keys(city)
     end
 
-    def selectState(state)
+    def selectState
+        browser.find_element(STATE_INPUT).click
     end
 
     def typePostalCode(postal_code)
@@ -56,12 +64,21 @@ class LogInPage
         browser.find_element(POSTAL_CODE_INPUT).send_keys(postal_code)
     end
 
-    def selectContry(country)
+    def selectCountry
+        browser.find_element(COUNTRY_INPUT).click
     end
 
     def typeMobilePhone(m_phone)
         browser.find_element(MOBILE_PHONE_INPUT).clear
         browser.find_element(MOBILE_PHONE_INPUT).send_keys(m_phone)
+    end
+
+    def clickCreateAccount
+        browser.find_element(REGISTER_BUTTON).click
+    end
+
+    def checkSuccessfullRegistration
+        browser.find_element(SUCCESFUL_REGISTRATION).text.include? 'welcome'
     end
 
 end

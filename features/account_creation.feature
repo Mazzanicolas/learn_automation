@@ -2,11 +2,11 @@ Feature: account_creation
     Background:
         Given a new 'chrome' browser
     
-    @ignore 
+    @test_case 
 	Scenario Outline: Account creation
         Given I navigate to homepage
         When  I click sign in
-        And   I insert '<email>' into the email field 
+        And   I insert '<email>' in to the email field
         And   I click create account
         And   I insert '<firstName>' as name
         And   I insert '<lastName>' as last name
@@ -14,13 +14,16 @@ Feature: account_creation
         And   I insert '<password>' as password
         And   I insert '<address>' as address
         And   I insert '<cityName>' as city
-        And   I select 'state' as state
+        And   I select a state
         And   I insert '<postalCode>' as postal code
-        And   I select 'Country' as country
+        And   I select a country
         And   I insert '<mobilePhone>' as mobile phone number
+        And   I select create account
         Then  I see the successful registration
-
 Examples:
     | email             | firstName | lastName | emailConfirmation | password | address | cityName | postalCode | mobilePhone |
-    | email@example.com | FrstName  | LstName  | email@example.com | p455w0rd | 8avn    | MyCity   | 1000       | 09215589    |
-    | liame@ampleex.com | FrstEman  | LstEman  | liame@example.com | pa55word | 9avn    | MyCity2  | 0100       | 09915549    |
+    | zoey5@example.com | FrstName  | LstName  | zoey4@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoey6@example.com | FrstName  | LstName  | zoey6@example.com | p455w0rd | 8avn    | MyCity   | 10001      | 09215589    |
+    | zoey7@ampleex.com | FrstEman  | LstEman  | zoey7@ampleex.com | pa55word | 9avn    | MyCity2  | 01001      | 09915549    |
+    | zoey8@expleam.com | FrstName  | TslName  | zoey8@expleam.com | p4s5w0rd | 10avn   | MyCity3  | 00101      | 19215570    |
+    | zoey9@pleexam.com | FrstName  | TslEman  | zoey9@pleexam.com | p4ssw0rd | 31avn   | MyCity4  | 00011      | 08216689    |

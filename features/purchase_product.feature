@@ -2,7 +2,7 @@ Feature: product_purchase
     Background:
         Given a new 'chrome' browser
 
-    @test_case
+    @ignore
 	Scenario: Purchase blouse form quick view
         Given I navigate to homepage
         When  I LogIn

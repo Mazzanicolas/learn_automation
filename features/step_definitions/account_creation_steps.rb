@@ -6,9 +6,10 @@ When(/^I click sign in$/) do
 	end
 end
 
-When(/^(I insert '(.*)' in to the email field|I insert '(.*)' as email)$/) do |email| 
-	begin#Tal vez separar en dos porque so dos paginas diferentes
-	@page.typeEmailToRegister(email)
+When(/^I insert '(.*)' in to the email field$/) do |email|
+	begin
+		@page = LogInPage.new $browser
+		@page.typeEmailToRegister(email)
 	rescue => e
 		fail "Error iserting dates. Error: #{e}"
 	end
@@ -24,7 +25,16 @@ end
 
 When(/^I insert '(.*)' as name$/) do |name| 
 	begin
-	@page.typeFirstName(name)
+		@page = AccountCreation.new $browser
+		@page.typeFirstName(name)
+	rescue => e
+		fail "Error iserting dates. Error: #{e}"
+	end
+end
+
+When(/^I insert '(.*)' as email$/) do |email| 
+	begin
+		@page.typeEmail(email)
 	rescue => e
 		fail "Error iserting dates. Error: #{e}"
 	end
@@ -38,7 +48,7 @@ When(/^I insert '(.*)' as last name$/) do |last_name|
 	end
 end
 
-When(/^I insert '(.*)' as passworde$/) do |password| 
+When(/^I insert '(.*)' as password$/) do |password| 
 	begin
 	@page.typePassword(password)
 	rescue => e
@@ -62,9 +72,9 @@ When(/^I insert '(.*)' as city$/) do |city|
 	end
 end
 
-When(/^I select '(.*)' as state$/) do |state| 
+When(/^I select a state$/) do 
 	begin
-	@page.selectState(state)
+	@page.selectState
 	rescue => e
 		fail "Error iserting dates. Error: #{e}"
 	end
@@ -78,15 +88,15 @@ When(/^I insert '(.*)' as postal code$/) do |postal_code|
 	end
 end
 
-When(/^I select '(.*)' as country$/) do |country| 
+When(/^I select a country$/) do 
 	begin
-	@page.selectCountry(country)
+	@page.selectCountry
 	rescue => e
 		fail "Error iserting dates. Error: #{e}"
 	end
 end
 
-When(/^I insert '(.*)' as mobile phone number$/) do |m_phone_numer| 
+When(/^I insert '(.*)' as mobile phone number$/) do |m_phone_number| 
 	begin
 	@page.typeMobilePhone(m_phone_number)
 	rescue => e
@@ -94,9 +104,17 @@ When(/^I insert '(.*)' as mobile phone number$/) do |m_phone_numer|
 	end
 end
 
-Then(/^I see the succsessful registration$/) do 
-	begin 
+When(/^I select create account$/) do
+	begin
+	@page.clickCreateAccount
+	rescue => e
+		fail "Error iserting dates. Error: #{e}"
+	end
+end
 
+Then(/^I see the successful registration$/) do 
+	begin 
+		@page.checkSuccessfullRegistration
 	rescue => e
 		fail "Error in results. Error: #{e}"
 	end
