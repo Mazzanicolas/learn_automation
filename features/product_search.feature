@@ -10,13 +10,14 @@ Feature: product_search
         And   I select the first product
         Then  I see a product with name like 'Summer Dress'
 
-    @ignore 
+    @test_case
 	Scenario: Verify product serarch with filters
         Given I navigate to homepage
-        And   I select women
-        And   I filter by size 'S'
-        And   I select composition 'Cotton'
-        And   I select color 'Black'
+        When   I select women
+        And   I filter by 'Black'
+        And   I filter by 'Casual'
+        And   I filter by 'Cotton'
+        And   First item is black
         And   I add to compare the first result
         And   I select compare
-        Then  I see a cotton black small dress
+        Then  I see a cotton black casual dress

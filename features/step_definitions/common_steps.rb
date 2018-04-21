@@ -42,3 +42,13 @@ When(/^I LogIn$/) do
 		fail "Error opening page. Error : #{e}"
 	end
 end
+
+
+When(/^I select women$/) do
+	begin
+		@page.goToWoman
+		@page = WomanPage.new $browser
+	rescue => e
+		fail "Error opening page. Error : #{e}"
+	end
+end

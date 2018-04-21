@@ -7,7 +7,7 @@ class HomePage
   #Accounts
   SIGNIN_BUTTON = {css: '.login'}
   #NavBar
-  NAV_WOMEN_BUTTON = {css: ''}
+  NAV_WOMEN_BUTTON = {css: '.menu-content .sf-with-ul[title="Women"]'}
   NAV_DRESSES_BUTTON = {css: '.sf-menu > li > a[title = "Dresses"]'}
   NAV_TSHIRTS_BUTTON = {css: ''}
 
@@ -50,6 +50,10 @@ class HomePage
 
   def goToDresses()
     browser.find_element(NAV_DRESSES_BUTTON).click
+  end
+
+  def goToWoman()
+    browser.find_element(NAV_WOMEN_BUTTON).click
   end
 
   def isRightPage?
