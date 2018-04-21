@@ -3,7 +3,8 @@ class ProductViewPage
     #Search
     ADD_CART_BUTTON          = { css: '#add_to_cart button'               }
     CONTINUE_SHOPPING_BUTTON = { css: '.continue span'                    }
-    CART_BUTTON              = { css: 'a[title ="View my shopping cart"]' }
+    CART_BUTTON              = { css: 'button-container a'                }
+    CART_BUTTON_             = { css: 'a[title ="View my shopping cart"]' }
     attr_reader :browser
 
     def initialize(browser)
@@ -15,7 +16,11 @@ class ProductViewPage
     end
 
     def clickOnCart()
-        browser.find_element(CART_BUTTON).click
+        if browser.displayed?(CART_BUTTON_)
+            browser.find_element(CART_BUTTON_).click
+        else
+            browser.find_element(CART_BUTTON).click
+        end
     end
 
     def clickContinueShopping()

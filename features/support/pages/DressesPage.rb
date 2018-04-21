@@ -20,7 +20,7 @@ class DressesPage
         #browser.find_element(FIRST_ITEM).click
     end
 
-    def is_present?(search_result)
+    def present?(search_result)
         browser.find_element(SELECTED_ITEM_TITLE).text.include? search_result
     end
 

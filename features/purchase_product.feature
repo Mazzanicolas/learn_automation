@@ -8,7 +8,7 @@ Feature: product_purchase
         When  I quick view a dress in the home page
         And   I add it to cart
         And   I proceed to check out
-        ...
+        
         And   I proceed to checkout to 'Address'
         And   I proceed to checkout to 'Shipping' 
         And   I agree to the terms
@@ -17,7 +17,7 @@ Feature: product_purchase
         And   I confirm my order
         Then  My order is complete
 
-    @ignore
+    @test_case
 	Scenario: Purchase dress 
         Given I navigate to homepage
         When  I LogIn
