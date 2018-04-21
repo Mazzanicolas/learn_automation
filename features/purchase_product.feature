@@ -5,11 +5,11 @@ Feature: product_purchase
     @test_case
 	Scenario: Purchase blouse form quick view
         Given I navigate to homepage
-        
-        When  I quick view a dress in the home page
+        When  I LogIn        
+        And   I navigate to homepage
+        And   I quick view a dress in the home page
         And   I add the item to the cart
-        And   I proceed to check out
-        
+        And   I proceed to check out        
         And   I proceed to checkout to 'Address'
         And   I proceed to checkout to 'Shipping' 
         And   I agree to the terms

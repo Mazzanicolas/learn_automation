@@ -15,15 +15,20 @@ class HomePage
     QUICK_VIEW          = { css:   '.product_list .ajax_block_product:nth-of-type(1) .quick-view'       }
     SELECTED_ITEM_TITLE = { xpath: '//h1[@itemprop = "name"]'                                           }
     FEATURED_PRODUCT_QV = { css: '#homefeatured .col-sm-4:nth-of-type(2) .quick-view-mobile' }
-    ADD_TO_CART_MODAL   = { xpath: '//*[@id="add_to_cart"]'}
-    
+    ADD_TO_CART_MODAL   = { css: '#add_to_cart button'}
+    CHECKOUT_BUTTON     = { css: '[title="Proceed to checkout"]' }
     attr_reader :browser
 
     def initialize(browser)
         @browser = browser
     end
 
+    def proceedToCheckout()
+        browser.find_element(CHECKOUT_BUTTON).click
+    end
+
     def addToCartFromModal()
+        sleep 40 
         browser.find_element(ADD_TO_CART_MODAL).click
     end
 
