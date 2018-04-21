@@ -5,13 +5,13 @@ Feature: product_purchase
     @test_case
 	Scenario: Purchase blouse form quick view
         Given I navigate to homepage
-        When  I LogIn        
+        When  I LogIn
         And   I navigate to homepage
         And   I quick view a dress in the home page
         And   I add the item to the cart
-        And   I proceed to check out        
+        And   I proceed to check out
         And   I proceed to checkout to 'Address'
-        And   I proceed to checkout to 'Shipping' 
+        And   I proceed to checkout to 'Shipping'
         And   I agree to the terms
         And   I proceed to checkout to 'Payment'
         And   I select Bank Wire payment
@@ -19,8 +19,8 @@ Feature: product_purchase
         Then  My order is complete
 
     @Done11Steps
-    @ignore 
-	Scenario: Purchase dress 
+    @ignore
+	Scenario: Purchase dress
         Given I navigate to homepage
         When  I LogIn
         And   I navigate to homepage
@@ -29,7 +29,7 @@ Feature: product_purchase
         And   I Add the item to the cart
         And   I select my cart
         And   I proceed to checkout to 'Address'
-        And   I proceed to checkout to 'Shipping' 
+        And   I proceed to checkout to 'Shipping'
         And   I agree to the terms
         And   I proceed to checkout to 'Payment'
         And   I select Bank Wire payment
