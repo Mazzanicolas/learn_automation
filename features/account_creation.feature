@@ -22,7 +22,7 @@ Feature: account_creation
         Then  I see the successful registration
 Examples:
     | email             | firstName | lastName | emailConfirmation | password | address | cityName | postalCode | mobilePhone |
-    | zoey5@example.com | FrstName  | LstName  | zoey4@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoey5@example.com | FrstName  | LstName  | zoey5@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
     | zoey6@example.com | FrstName  | LstName  | zoey6@example.com | p455w0rd | 8avn    | MyCity   | 10001      | 09215589    |
     | zoey7@ampleex.com | FrstEman  | LstEman  | zoey7@ampleex.com | pa55word | 9avn    | MyCity2  | 01001      | 09915549    |
     | zoey8@expleam.com | FrstName  | TslName  | zoey8@expleam.com | p4s5w0rd | 10avn   | MyCity3  | 00101      | 19215570    |
