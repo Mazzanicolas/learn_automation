@@ -2,11 +2,12 @@ Feature: product_purchase
     Background:
         Given a new 'chrome' browser
 
-    @ignore
+    @test_case
 	Scenario: Purchase blouse form quick view
         Given I navigate to homepage
+        
         When  I quick view a dress in the home page
-        And   I add it to cart
+        And   I add the item to the cart
         And   I proceed to check out
         
         And   I proceed to checkout to 'Address'
@@ -17,7 +18,8 @@ Feature: product_purchase
         And   I confirm my order
         Then  My order is complete
 
-    @test_case
+    @Done11Steps
+    @ignore 
 	Scenario: Purchase dress 
         Given I navigate to homepage
         When  I LogIn

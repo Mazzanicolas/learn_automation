@@ -14,11 +14,21 @@ class HomePage
     CLICK_FIRST_ITEM    = { css:   '.product_list .ajax_block_product:nth-of-type(1) .product_img_link' }
     QUICK_VIEW          = { css:   '.product_list .ajax_block_product:nth-of-type(1) .quick-view'       }
     SELECTED_ITEM_TITLE = { xpath: '//h1[@itemprop = "name"]'                                           }
-
+    FEATURED_PRODUCT_QV = { css: '#homefeatured .col-sm-4:nth-of-type(2) .quick-view-mobile' }
+    ADD_TO_CART_MODAL   = { xpath: '//*[@id="add_to_cart"]'}
+    
     attr_reader :browser
 
     def initialize(browser)
         @browser = browser
+    end
+
+    def addToCartFromModal()
+        browser.find_element(ADD_TO_CART_MODAL).click
+    end
+
+    def quickViewSecondProduct()
+        browser.find_element(FEATURED_PRODUCT_QV).click
     end
 
     def search(search_query)

@@ -3,7 +3,7 @@ When(/^I select Dresses$/) do
         	@page.goToDresses()
         	@Page = DressesPage.new $browser
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error going to dresses. Error: #{e}"
 	end
 end
 
@@ -12,7 +12,7 @@ When(/^I select the first item$/) do
         @page.clickFirstProduct()
         @page = ProductViewPage.new $browser
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error clicking first product. Error: #{e}"
 	end
 end
 
@@ -28,7 +28,7 @@ When(/^I click continue shopping$/) do
 	begin
 		@page.clickContinueShopping()
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error continuing shopping. Error: #{e}"
 	end
 end
 
@@ -37,7 +37,7 @@ When(/^I select my cart$/) do
         	@page.clickOnCart()
         	@page = CheckOutSummary.new $browser
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error selecting cart. Error: #{e}"
 	end
 end
 
@@ -53,7 +53,7 @@ When(/^I proceed to checkout to '(.*)'$/) do |checkOutStep|
 			@page = PaymentCheckOut.new $browser
 		end
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error proceeding to checkout. Error: #{e}"
 	end
 end
 
@@ -61,7 +61,7 @@ When(/^I agree to the terms$/) do
 	begin
         @page.agreeTerms()
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error agreeing to terms. Error: #{e}"
 	end
 end
 
@@ -69,7 +69,7 @@ When(/^I select Bank Wire payment$/) do
 	begin
         @page.select_bankwire()
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error selecting payment. Error: #{e}"
 	end
 end
 
@@ -77,7 +77,7 @@ When(/^I confirm my order$/) do
 	begin
         	@page.confirm_payment()
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error confirming dates. Error: #{e}"
 	end
 end
 
@@ -85,6 +85,6 @@ Then(/^My order is complete$/) do
 	begin
         	@page.is_order_complete?()
 	rescue => e
-		fail "Error iserting dates. Error: #{e}"
+		fail "Error completing orders. Error: #{e}"
 	end
 end

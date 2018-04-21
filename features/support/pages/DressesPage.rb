@@ -3,9 +3,9 @@ class DressesPage
     #Search
     SEARCH_INPUT       = { id: 'search_query_top' }
     SEARCH_BUTTON      = { css: '#searchbox button' }
-    QUICK_VIEW          = {css:   '.product_list .ajax_block_product:nth-of-type(1) .quick-view'       }
+    QUICK_VIEW         = { css: '.product_list .ajax_block_product:nth-of-type(1) .quick-view'       }
 
-    FIRST_ITEM      = { css: '.product_list .ajax_block_product:nth-of-type(1) product_img_link' }
+    FIRST_ITEM         = { css: '.product_list .ajax_block_product:nth-of-type(1) product_img_link' }
 
     attr_reader :browser
 
