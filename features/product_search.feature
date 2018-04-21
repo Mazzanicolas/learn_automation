@@ -3,7 +3,7 @@ Feature: product_search
     Background:
         Given a new 'chrome' browser
     
-    @ignore
+    @test_case
 	Scenario: Verify simple product search
         Given I navigate to homepage
         When  I search 'Summer Dress'

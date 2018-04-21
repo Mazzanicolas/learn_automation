@@ -2,7 +2,7 @@ Feature: product_purchase
     Background:
         Given a new 'chrome' browser
 
-    @ignore
+    @test_case
 	Scenario: Purchase blouse form quick view
         Given I navigate to homepage
         When  I LogIn
@@ -18,7 +18,7 @@ Feature: product_purchase
         And   I confirm my order
         Then  My order is complete
 
-    @ignore
+    @test_case
 	Scenario: Purchase dress
         Given I navigate to homepage
         When  I LogIn

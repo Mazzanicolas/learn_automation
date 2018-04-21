@@ -2,7 +2,7 @@ Feature: account_creation
     Background:
         Given a new 'chrome' browser
     
-    @ignore 
+    @test_case 
 	Scenario Outline: Account creation
         Given I navigate to homepage
         When  I click sign in
@@ -22,4 +22,8 @@ Feature: account_creation
         Then  I see the successful registration
 Examples:
     | email              | firstName | lastName | emailConfirmation  | password | address | cityName | postalCode | mobilePhone |
-    | zoey95@example.com | FrstName  | LstName  | zoey95@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoey45@example.com | FrstName  | LstName  | zoey45@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoey55@example.com | FrstName  | LstName  | zoey55@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoey65@example.com | FrstName  | LstName  | zoey65@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoey75@example.com | FrstName  | LstName  | zoey75@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoey85@example.com | FrstName  | LstName  | zoey85@example.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
