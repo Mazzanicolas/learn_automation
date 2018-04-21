@@ -78,7 +78,7 @@ class AccountCreation
     end
 
     def checkSuccessfullRegistration
-        browser.find_element(SUCCESFUL_REGISTRATION).text.include? 'welcome'
+        browser.find_element(SUCCESFUL_REGISTRATION).text.include? 'Welcome to your account'
     end
 
 end
