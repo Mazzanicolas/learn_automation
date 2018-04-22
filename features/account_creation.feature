@@ -22,8 +22,8 @@ Feature: account_creation
         Then  I see the successful registration
 Examples:
     | email              | firstName | lastName | emailConfirmation  | password | address | cityName | postalCode | mobilePhone |
-    | zoey41@esample.com | FrstZoey  | LstName  | zoey41@esample.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
-    | zoey51@esample.com | Zoey_101  | TltName  | zoey51@esample.com | p4sswwwd | 6avn    | MyCiti   | 01000      | 05225589    |
-    | zoey61@esample.com | soy1Name  | LstNare  | zoey61@esample.com | p4ssw0rf | 5avn    | MyCyti   | 00010      | 06216589    |
-    | zoey71@esample.com | zoelName  | LstNAME  | zoey71@esample.com | p4ss30rd | 4avn    | MySity   | 00001      | 07215659    |
-    | zoey81@esample.com | Ffstfamf  | LStName  | zoey81@esample.com | pA5sw0rd | 1avn    | MyZity   | 10001      | 08215599    |
+    | zoe140@esample.com | FrstZoey  | LstName  | zoe140@esample.com | p455w0rd | 8avn    | MyCity   | 10000      | 09215589    |
+    | zoe150@esample.com | ZoeyVoey  | TltName  | zoe150@esample.com | p4sswwwd | 6avn    | MyCiti   | 01000      | 05225589    |
+    | zoe160@esample.com | soyrName  | LstNare  | zoe160@esample.com | p4ssw0rf | 5avn    | MyCyti   | 00010      | 06216589    |
+    | zoe170@esample.com | zoelName  | LstNAME  | zoe170@esample.com | p4ss30rd | 4avn    | MySity   | 00001      | 07215659    |
+    | zoe180@esample.com | Ffstfamf  | LStName  | zoe180@esample.com | pA5sw0rd | 1avn    | MyZity   | 10001      | 08215599    |
